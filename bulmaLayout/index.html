@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Special Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -119,24 +120,22 @@
         <div class="column mt-6"> <!-- Second Column-->
           
           <nav class="panel">             <!-- Panel-->
-            <p class="panel-heading">
-              Repositories
+      
+            <p class="panel-tabs">
+              <a class="is-active">Current</a>
+              <a>Completed</a>
+              <a>Upcoming</a>
+              <a>All</a>
             </p>
+
             <div class="panel-block">
               <p class="control has-icons-left">
-                <input class="input" type="text" placeholder="Search">
+                <input class="input" type="text" placeholder="New Task">
                 <span class="icon is-left">
                   <i class="fas fa-search" aria-hidden="true"></i>
                 </span>
               </p>
             </div>
-            <p class="panel-tabs">
-              <a class="is-active">All</a>
-              <a>Public</a>
-              <a>Private</a>
-              <a>Sources</a>
-              <a>Forks</a>
-            </p>
 
             <label class="panel-block">
               <input type="checkbox">
@@ -163,11 +162,6 @@
               Add a .gitignore file
             </label>
 
-            <div class="panel-block">
-              <button class="button is-link is-outlined is-fullwidth">
-                Reset all filters
-              </button>
-            </div>
           </nav>
 
             <article class="message is-primary">  <!-- Make github message-->
@@ -182,6 +176,7 @@
                 </div>
               </article>
 
+              <nav class="panel p-5">
               <div class="field">               <!-- form -->
                 <label class="label">Name</label>
                 <div class="control">
@@ -266,6 +261,7 @@
                   <button class="button is-link is-light">Cancel</button>
                 </div>
               </div>
+            </nav>
 
         </div>
         <div class="column is-one-quarter mt-6"> <!-- Third Column-->
