@@ -87,7 +87,7 @@
   <div class="container">
 
     <div class="columns">
-        <div class="column is-one-quarter"> <!-- First Column-->
+        <div class="column is-one-quarter mt-6"> <!-- First Column-->
           
             <div class="card">
                 <header class="card-header">
@@ -116,8 +116,60 @@
             </div>
 
         </div>
-        <div class="column"> <!-- Second Column-->
+        <div class="column mt-6"> <!-- Second Column-->
           
+          <nav class="panel">             <!-- Panel-->
+            <p class="panel-heading">
+              Repositories
+            </p>
+            <div class="panel-block">
+              <p class="control has-icons-left">
+                <input class="input" type="text" placeholder="Search">
+                <span class="icon is-left">
+                  <i class="fas fa-search" aria-hidden="true"></i>
+                </span>
+              </p>
+            </div>
+            <p class="panel-tabs">
+              <a class="is-active">All</a>
+              <a>Public</a>
+              <a>Private</a>
+              <a>Sources</a>
+              <a>Forks</a>
+            </p>
+
+            <label class="panel-block">
+              <input type="checkbox">
+              Make Bulma great again
+            </label>
+
+            <label class="panel-block">
+              <input type="checkbox">
+              Add some more features
+            </label>
+
+            <label class="panel-block">
+              <input type="checkbox">
+              Make a github account
+            </label>
+            
+            <label class="panel-block">
+              <input type="checkbox">
+              Learn how to use github
+            </label>
+      
+            <label class="panel-block">
+              <input type="checkbox">
+              Add a .gitignore file
+            </label>
+
+            <div class="panel-block">
+              <button class="button is-link is-outlined is-fullwidth">
+                Reset all filters
+              </button>
+            </div>
+          </nav>
+
             <article class="message is-primary">  <!-- Make github message-->
                 <div class="message-header">
                   <p>Make a github account</p>
@@ -216,8 +268,10 @@
               </div>
 
         </div>
-        <div class="column is-one-quarter"> <!-- Third Column-->
+        <div class="column is-one-quarter mt-6"> <!-- Third Column-->
           
+          <h1 class="title">Table of contents</h1>
+          <h2 class="subtitle">Intra-page navigation</h2>
             <aside class="menu">
                 <p class="menu-label">
                   General
