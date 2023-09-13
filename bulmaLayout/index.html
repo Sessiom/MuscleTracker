@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Page</title>
+    <title>My First Bulma Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="main.css">
@@ -87,8 +87,8 @@
 
   <div class="container">
 
-    <div class="columns">
-        <div class="column is-one-quarter mt-6"> <!-- First Column-->
+    <div class="columns m-3">
+        <div class="column is-one-quarter mt-3"> <!-- First Column-->
           
             <div class="card">
                 <header class="card-header">
@@ -117,28 +117,50 @@
             </div>
 
         </div>
-        <div class="column mt-6"> <!-- Second Column-->
+        <div class="column mt-3"> <!-- Second Column-->
           
           <nav class="panel">             <!-- Panel-->
       
-            <p class="panel-tabs">
-              <a class="is-active">Current</a>
-              <a>Completed</a>
-              <a>Upcoming</a>
-              <a>All</a>
-            </p>
+            <div class="tabs is-boxed">
+              <ul>
+                <li class="is-active">
+                  <a>
+                    <span class="icon is-small"><i class="fas fa-list-alt" aria-hidden="true"></i></span>
+                    <span>Current</span>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <span class="icon is-small"><i class="fas fa-calendar-times" aria-hidden="true"></i></span>
+                    <span>Completed</span>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <span class="icon is-small"><i class="fas fa-calendar-alt" aria-hidden="true"></i></span>
+                    <span>Upcoming</span>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <span class="icon is-small"><i class="far fa-calendar" aria-hidden="true"></i></span>
+                    <span>All</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-            <div class="panel-block">
+            <div class="panel-block">    <!--New task-->
               <p class="control has-icons-left">
                 <input class="input" type="text" placeholder="New Task">
                 <span class="icon is-left">
-                  <i class="fas fa-search" aria-hidden="true"></i>
+                  <i class="fas fa-calendar-plus" aria-hidden="true"></i>
                 </span>
               </p>
             </div>
 
             <label class="panel-block">
-              <input type="checkbox">
+              <input type="checkbox" checked>
               Make Bulma great again
             </label>
 
@@ -264,7 +286,7 @@
             </nav>
 
         </div>
-        <div class="column is-one-quarter mt-6"> <!-- Third Column-->
+        <div class="column is-one-quarter mt-3"> <!-- Third Column-->
           
           <h1 class="title">Table of contents</h1>
           <h2 class="subtitle">Intra-page navigation</h2>
