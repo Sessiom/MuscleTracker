@@ -18,21 +18,21 @@ export function getSession(){
 export function useLogin(){
   const router = useRouter();
 
-  return{
-  login(email: string, password: string): User | null {
-  const user = getUserByEmail(email);
-  if(user && user.password === password){
-    session.user = user;
+  return {
+    login(email: string, password: string): User | null {
+      const user = getUserByEmail(email);
+      if(user && user.password === password){
+        session.user = user;
 
-    router.push(session.redirectUrl || "/");
+        router.push(session.redirectUrl || "/");
 
-    return user;
-  }
-  return null;
-  },
-  logout(){
-    session.user = null;
-    router.push("/login");
+        return user;
+      }
+      return null;
+    },
+    logout(){
+      session.user = null;
+      router.push("/login");
     }
   }
 }
