@@ -24,6 +24,11 @@ const router = createRouter({
       component: () => import("../views/ProductList.vue"),
       beforeEnter: requireLogin,
     },
+    {
+      path: "/Friends",
+      name: "Friends",
+      component: () => import("../views/FriendsActivity.vue"),
+    }
   ],
 });
 

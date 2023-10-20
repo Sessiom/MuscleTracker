@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import LoginBadge from './LoginBadge.vue';
 import FlyoutPanel from './FlyoutPanel.vue';
+import FriendsActivity from './FriendsActivity.vue';
 
 const isActive = ref(false);
 const isShoppingCartOpen = ref(false);
@@ -29,6 +30,8 @@ const isShoppingCartOpen = ref(false);
         <RouterLink class="navbar-item" to="/" >Home</RouterLink>
         <RouterLink class="navbar-item" to="/about">About</RouterLink>
         <RouterLink class="navbar-item" to="/products">Products</RouterLink>
+        <RouterLink class="navbar-item" to="/Friends">Friends Activity</RouterLink>
+
         
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
