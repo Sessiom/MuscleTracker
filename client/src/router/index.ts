@@ -19,15 +19,10 @@ const router = createRouter({
       beforeEnter: requireLogin,
     },
     {
-      path: "/products",
-      name: "products",
-      component: () => import("../views/ProductList.vue"),
-      beforeEnter: requireLogin,
-    },
-    {
       path: "/Friends",
       name: "Friends",
       component: () => import("../views/FriendsActivity.vue"),
+      beforeEnter: requireLogin,
     }
   ],
 });

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import { ref } from "vue"
   import { getSession, useLogin } from '@/model/session'
 
   const session = getSession()
@@ -11,6 +12,7 @@
   const doLogout = () => {
     logout();
   }
+  const isActive = ref(true);
 
 </script>
 
@@ -27,11 +29,29 @@
     </small>
   </div>
   <div class="buttons" v-else>
+
+    <div class="navbar-item has-dropdown is-hoverable">
+    <a class="button is-light">
+      Log in
+    </a>
+    <div class="navbar-dropdown">
+            <a class="navbar-item" @click.prevent="doLogin">
+              Sheldon
+            </a>
+            <a class="navbar-item">
+              Jeff
+            </a>
+            <a class="navbar-item">
+              Bob
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Other Account
+            </a>
+          </div>
+        </div>
     <a class="button is-primary">
       <strong>Sign up</strong>
-    </a>
-    <a class="button is-light" @click.prevent="doLogin">
-      Log in
     </a>
   </div>
 </template>

@@ -1,6 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
+  <div class="column is-full">
+      <h1 class="title">Please login first</h1>
+
+    </div>
   <div class="hero-body">
     <div class="column is-half is-offset-one-quarter">
       <div class="box">
