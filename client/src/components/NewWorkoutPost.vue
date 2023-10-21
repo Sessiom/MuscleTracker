@@ -3,6 +3,7 @@ import { ref } from "vue"
 import { getSession, useLogin } from '@/model/session'
 const show1 = ref(true);
 const session = getSession();
+
 </script>
 
 
@@ -11,8 +12,8 @@ const session = getSession();
 <div v-if="show1">
     <article class="media box">
       <figure class="media-left">
-        <p class="image is-64x64"><img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMo3I5GL9_Zd_LULXRIXTzRLlVESBnoGp8sw&amp;usqp=CAU">
+        <p v-if="session.user" class="image is-64x64"><img
+            :src= "session.user.image">
         </p>
       </figure>
       <div class="media-content">

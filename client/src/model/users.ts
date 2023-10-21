@@ -1,6 +1,7 @@
 /* B"H
 */
 
+
 import data from "../data/users.json";
 
 export interface User {
@@ -11,6 +12,7 @@ export interface User {
   password: string,
   role: "admin" | "user",
   token?: string
+  image: string
 }
 
 export function getUsers(): User[] {
