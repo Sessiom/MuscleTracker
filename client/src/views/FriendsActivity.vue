@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue"
+import AddWorkoutForm from "@/components/AddWorkoutForm.vue"
 const show1 = ref(true);
 const show2 = ref(true);
 const show3 = ref(true);
 const show4 = ref(true);
 const show5 = ref(true);
+const isActive = ref(false);
 </script>
 
 <template>
@@ -13,21 +15,11 @@ const show5 = ref(true);
     <div>
       <h1 class="title">Friends Activity</h1>
       <div class="columns">
-        <div class="column is-half is-offset-one-quarter"><button class="button is-info is-fullwidth">Add Workout</button>
-          <form>
-            <div class="modal">
-              <div class="modal-background"></div>
-              <div class="modal-card">
-                <header class="modal-card-head">
-                  <p class="modal-card-title">Add a Workout</p><button class="delete" aria-label="close"></button>
-                </header>
-                <section class="modal-card-body"><!----></section>
-                <footer class="modal-card-foot"><button class="button is-success">Save changes</button><button
-                    class="button">Cancel</button></footer>
-              </div>
-            </div>
+        <div class="column is-half is-offset-one-quarter">
+          <button @click="isActive = !isActive" class="button is-info is-fullwidth">Add Workout</button>
+          <form v-if="isActive">
+           <AddWorkoutForm/>
           </form><br>
-
 
           <div v-if="show1">
             <article class="media box">
