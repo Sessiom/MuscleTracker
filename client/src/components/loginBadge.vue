@@ -5,8 +5,14 @@
   const session = getSession()
   const { login, logout } = useLogin()
 
-  const doLogin = () => {
+  const doLogin1 = () => {
     login('hbingley1@plala.or.jp', 'CQutx25i8r')
+  }
+  const doLogin2 = () => {
+    login('atuny0@sohu.com', '9uQFF1Lh')
+  }
+  const doLogin3 = () => {
+    login('rshawe2@51.la', 'OWsTbMUgFc')
   }
 
   const doLogout = () => {
@@ -35,14 +41,14 @@
       Log in
     </a>
     <div class="navbar-dropdown">
-            <a class="navbar-item" @click.prevent="doLogin">
+            <a class="navbar-item" @click.prevent="doLogin1">
               Sheldon
             </a>
-            <a class="navbar-item">
-              Jeff
+            <a class="navbar-item" @click.prevent="doLogin2">
+              Terry
             </a>
-            <a class="navbar-item">
-              Bob
+            <a class="navbar-item" @click.prevent="doLogin3">
+              Terrill
             </a>
             <hr class="navbar-divider">
             <a class="navbar-item">
