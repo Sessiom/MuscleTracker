@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue"
+import { getSession, useLogin } from '@/model/session'
 const show1 = ref(true);
+const session = getSession();
 </script>
 
 
@@ -15,7 +17,7 @@ const show1 = ref(true);
       </figure>
       <div class="media-content">
       <div class="content">
-        <p><strong>Moshe Plotkin</strong> &nbsp;<small>@JewPaltz</small> &nbsp; <small>24 min ago</small><br>
+        <p v-if="session.user"><strong> {{ session.user.firstName }} {{ session.user.lastName }} </strong> &nbsp;<small>@JewPaltz</small> &nbsp; <small>24 min ago</small><br>
           Biked through campus - {
           "lat": 41.7459793,
           "lng": -74.082801

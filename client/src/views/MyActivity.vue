@@ -9,16 +9,16 @@ const isActive = ref(false);
 
   
     <div>
-      <h1 class="title">Friends Activity</h1>
+      <h1 class="title">My Activity</h1>
       <div class="columns">
         <div class="column is-half is-offset-one-quarter">
           <button @click="isActive = !isActive" class="button is-info is-fullwidth">Add Workout</button>
           <form v-if="isActive">
            <AddWorkoutForm/>
-          </form><br>   
+          </form><br>  
+          <NewWorkoutPost/> 
         </div> 
       </div>
-      <NewWorkoutPost/>
     </div>
 </template>
 
