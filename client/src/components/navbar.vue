@@ -29,6 +29,21 @@ const isShoppingCartOpen = ref(false);
         <RouterLink class="navbar-item" to="/MyActivity">My Activity</RouterLink>
         <RouterLink class="navbar-item" to="/Friends">Friends Activity</RouterLink>
 
+
+        <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Admin
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Users
+          </a>
+
+        </div>
+
+       </div>
+
       </div>
 
       <div class="navbar-end">
