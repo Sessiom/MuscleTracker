@@ -14,6 +14,7 @@ export interface User {
   role: "admin" | "user",
   token?: string,
   username: string,
+  image: string,
   workout: any,
   coordinate?: number,
   distance?: string,
