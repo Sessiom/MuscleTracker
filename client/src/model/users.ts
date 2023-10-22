@@ -11,13 +11,13 @@ export interface User {
   email: string,
   password: string,
   role: "admin" | "user",
-  token?: string
-  image: string
-  username: string
-  workout: any
-  coordinate: number
-  distance: string
-  duration: string
+  token?: string,
+  image: string,
+  username: string,
+  workout: any,
+  coordinate: number,
+  distance: string,
+  duration: string,
   picture: string
 }
 

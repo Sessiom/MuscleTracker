@@ -2,6 +2,7 @@
     "users": [
         {
             "id": 1,
+            "role": "admin",
             "firstName": "Terry",
             "lastName": "Medhurst",
             "maidenName": "Smitham",
@@ -21,7 +22,7 @@
             "workout": {
                 "pace": 4,
                 "calories": 1250,
-                "distance": "0.52 mi",
+                "distance": "1.12 mi",
                 "duration": "25:30",
                 "weekly": {
                     "pace": 5,
@@ -47,6 +48,7 @@
 
         {
             "id": 2,
+            "role": "user",
             "firstName": "Sheldon",
             "lastName": "Quigley",
             "maidenName": "Cole",
@@ -92,6 +94,7 @@
 
         {
             "id": 3,
+            "role": "user",
             "firstName": "Terrill",
             "lastName": "Hills",
             "maidenName": "Hoeger",

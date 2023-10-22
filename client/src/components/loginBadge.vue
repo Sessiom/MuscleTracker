@@ -45,7 +45,7 @@
               Sheldon
             </a>
             <a class="navbar-item" @click.prevent="doLogin2">
-              Terry
+              Terry (Admin)
             </a>
             <a class="navbar-item" @click.prevent="doLogin3">
               Terrill
