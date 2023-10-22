@@ -41,7 +41,7 @@
       Log in
     </a>
     <div class="navbar-dropdown">
-            <a class="navbar-item" @click.prevent="doLogin1">
+          <a class="navbar-item" @click.prevent="doLogin1">
               Sheldon
             </a>
             <a class="navbar-item" @click.prevent="doLogin2">
@@ -56,6 +56,7 @@
             </a>
           </div>
         </div>
+        
     <a class="button is-primary">
       <strong>Sign up</strong>
     </a>
