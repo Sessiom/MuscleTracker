@@ -2,12 +2,26 @@
 import { ref } from "vue"
 const isActive = ref(true);
 
+const workout = {
+    title: '',
+    date: '',
+    duration: '',
+    location: '',
+    picture: '',
+    type: '',
+}
+
+function saveWorkout() {
+    console.log(workout);
+}
+
 
 </script>
 
 
 <template>
     <div v-if="isActive" class="modal is-active">
+      <form @click.prevent="saveWorkout">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
@@ -15,7 +29,7 @@ const isActive = ref(true);
             </header>
             <section class="modal-card-body">
                 <div class="field" data=""><label class="label" for="name" data="">Title</label>
-                        <input type="text" class="input" id="name" data=""></div>
+                        <input type="text" class="input" name="Title"></div>
 
                 <div class="field" data=""><label class="label" for="date" data="">Date</label>
                         <input type="date" class="input" id="date" data=""></div>
@@ -44,7 +58,8 @@ const isActive = ref(true);
 
         <footer class="modal-card-foot"><button class="button is-success">Save changes</button>
                 <button @click="isActive = !isActive" class="button">Cancel</button></footer>
-    </div>
+      </div>
+     </form>
 </div>
 </template>
 

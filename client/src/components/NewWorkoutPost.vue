@@ -18,7 +18,7 @@ const session = getSession();
       </figure>
       <div class="media-content">
       <div class="content">
-        <p v-if="session.user"><strong> {{ session.user.firstName }} {{ session.user.lastName }} </strong> &nbsp;<small>{{ session.user.username }}</small> &nbsp; <small>24 min ago</small><br>
+        <p v-if="session.user"><strong> {{ session.user.firstName }} {{ session.user.lastName }} </strong> &nbsp;<small>{{ session.user.username }}</small> &nbsp; <small>{{ session.user.time }}</small><br>
           {{session.user.workout.type}} - {
           "lat": {{ session.user.workout.coordinates.lat }},
           "lng": {{ session.user.workout.coordinates.lng }}

@@ -6,10 +6,10 @@
   const { login, logout } = useLogin()
 
   const doLogin1 = () => {
-    login('hbingley1@plala.or.jp', 'CQutx25i8r')
+    login('atuny0@sohu.com', '9uQFF1Lh')
   }
   const doLogin2 = () => {
-    login('atuny0@sohu.com', '9uQFF1Lh')
+    login('hbingley1@plala.or.jp', 'CQutx25i8r') 
   }
   const doLogin3 = () => {
     login('rshawe2@51.la', 'OWsTbMUgFc')
@@ -42,10 +42,10 @@
     </a>
     <div class="navbar-dropdown">
           <a class="navbar-item" @click.prevent="doLogin1">
-              Sheldon
+              Terry (Admin)
             </a>
             <a class="navbar-item" @click.prevent="doLogin2">
-              Terry (Admin)
+              Sheldon
             </a>
             <a class="navbar-item" @click.prevent="doLogin3">
               Terrill

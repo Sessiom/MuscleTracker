@@ -8,6 +8,7 @@ export interface User {
   id?: number,
   firstName: string,
   lastName: string,
+  time: string,
   email: string,
   password: string,
   role: "admin" | "user",
