@@ -18,25 +18,25 @@ const session = getSession();
       </figure>
       <div class="media-content">
       <div class="content">
-        <p v-if="session.user"><strong> {{ session.user.firstName }} {{ session.user.lastName }} </strong> &nbsp;<small>@JewPaltz</small> &nbsp; <small>24 min ago</small><br>
-          Biked through campus - {
-          "lat": 41.7459793,
-          "lng": -74.082801
+        <p v-if="session.user"><strong> {{ session.user.firstName }} {{ session.user.lastName }} </strong> &nbsp;<small>{{ session.user.username }}</small> &nbsp; <small>24 min ago</small><br>
+          {{session.user.workout.type}} - {
+          "lat": {{ session.user.workout.coordinates.lat }},
+          "lng": {{ session.user.workout.coordinates.lng }}
           }
         <div class="columns">
           <div class="column has-text-centered"
             style="display: flex; justify-content: space-around; align-items: center;">
             <div>
-              <div class="title" style="margin: 0px;">1.0 mi</div>
+              <div class="title" style="margin: 0px;"> {{ session.user.workout.distance }}</div>
               <div class="heading">Distance</div>
             </div>
             <div>
-              <div class="title" style="margin: 0px;">0:30</div>
+              <div class="title" style="margin: 0px;">{{ session.user.workout.duration }}</div>
               <div class="heading">Duration</div>
             </div>
           </div>
           <div class="column"><img
-              src="https://www.rei.com/dam/content_team_080317_61569_mountain_biking_beginners_lg.jpg"
+              :src= "session.user.workout.picture"
               style="max-height: 100%;"></div>
         </div>
         </p>

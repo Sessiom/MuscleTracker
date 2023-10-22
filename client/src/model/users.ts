@@ -13,6 +13,12 @@ export interface User {
   role: "admin" | "user",
   token?: string
   image: string
+  username: string
+  workout: any
+  coordinate: number
+  distance: string
+  duration: string
+  picture: string
 }
 
 export function getUsers(): User[] {

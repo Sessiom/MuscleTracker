@@ -18,16 +18,16 @@
             "weight": 75.4,
             "domain": "slashdot.org",
             "ip": "117.29.86.254",
-            "address": {
-                "address": "1745 T Street Southeast",
-                "city": "Washington",
+            "workout": {
+                "distance": "0.52 mi",
+                "duration": "25:30",
                 "coordinates": {
-                    "lat": 38.867033,
-                    "lng": -76.979235
+                    "lat": 38.1340923,
+                    "lng": -76.5183512
                 },
-                "postalCode": "20020",
-                "state": "DC"
-              }
+                "type": "Parkour Training",
+                "picture": "https://images.ctfassets.net/uwf0n1j71a7j/5GhVEraYQrWD6pA5JPIoYF/30e9b4a2ef2d10f43753aab65f31f7ff/parkour.jpg"
+            }
             },
 
 
@@ -49,27 +49,15 @@
             "weight": 74,
             "domain": "51.la",
             "ip": "253.240.20.181",
-            "address": {
-                "address": "6007 Applegate Lane",
-                "city": "Louisville",
+            "workout": {
+                "distance": "1.24 mi",
+                "duration": "6:21",
                 "coordinates": {
                     "lat": 38.1343013,
                     "lng": -85.6498512
                 },
-                "postalCode": "40219",
-                "state": "KY"
-            },
-            "company": {
-                "address": {
-                    "address": "8821 West Myrtle Avenue",
-                    "city": "Glendale",
-                    "coordinates": {
-                        "lat": 33.5404296,
-                        "lng": -112.2488391
-                    },
-                    "postalCode": "85305",
-                    "state": "AZ"
-                }
+                "type": "Downhill Biking",
+                "picture": "https://www.twowheeledwanderer.com/wp-content/uploads/2021/07/Downhill-mountain-biking-2.jpg"
             }
         },
 
@@ -92,27 +80,15 @@
             "weight": 105.3,
             "domain": "earthlink.net",
             "ip": "205.226.160.3",
-            "address": {
-                "address": "560 Penstock Drive",
-                "city": "Grass Valley",
+            "workout": {
+                "distance": "0.23 mi",
+                "duration": "11:58",
                 "coordinates": {
-                    "lat": 39.213076,
-                    "lng": -121.077583
+                    "lat": 39.1154672,
+                    "lng": -121.4671882
                 },
-                "postalCode": "95945",
-                "state": "CA"
-            },
-            "company": {
-                "address": {
-                    "address": "18 Densmore Drive",
-                    "city": "Essex",
-                    "coordinates": {
-                        "lat": 44.492953,
-                        "lng": -73.101883
-                    },
-                    "postalCode": "05452",
-                    "state": "VT"
-                }
+                "type": "Breakdancing",
+                "picture": "https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2019/10/11/8e9ca35b-f25c-426a-bb40-338feabff9cb/world-urban-games-2019-shigekix-chairfreeze"
             }
         }]}
         
