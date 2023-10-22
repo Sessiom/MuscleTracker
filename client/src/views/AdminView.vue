@@ -34,12 +34,12 @@ import users from '@/data/users.json';
                 <td data=""><p class="image is-64x64" alt="avatar" data=""><img
                     :src="user[0].image">
                 </p></td>
-                <td data="">Moshe</td>
-                <td data="">Plotkin</td>
+                <td data="">{{user[0].firstName}}</td>
+                <td data="">{{user[0].lastName}}</td>
                 <td data="">[
-                    "plotkinm@newpaltz.edu"
+                    {{user[0].email}}
                     ]</td>
-                <td data="">JewPaltz</td>
+                <td data="">{{user[0].username}}</td>
                 <td data="">true</td>
                 <td data=""><button class="button" data=""><i class="fas fa-edit"
                             data=""></i></button><button class="button" data=""><i
@@ -50,12 +50,12 @@ import users from '@/data/users.json';
                 <td data=""><p class="image is-64x64" alt="avatar" data=""><img
                     :src="user[1].image">
                 </p></td>
-                <td data="">Kamala</td>
-                <td data="">Harris</td>
+                <td data="">{{user[1].firstName}}</td>
+                <td data="">{{user[1].lastName}}</td>
                 <td data="">[
-                    "vp@wh.com"
+                     {{user[1].email}}  
                     ]</td>
-                <td data="">vp</td>
+                <td data="">{{user[1].username}}</td>
                 <td data="">false</td>
                 <td data=""><button class="button" data=""><i class="fas fa-edit"
                             data-v-6173b8aa=""></i></button><button class="button" data=""><i
@@ -66,12 +66,12 @@ import users from '@/data/users.json';
                 <td data=""><p class="image is-64x64" alt="avatar" data=""><img
                     :src="user[2].image">
                 </p></td>
-                <td data="">John</td>
-                <td data="">Smith</td>
+                <td data="">{{ user[2].firstName }}</td>
+                <td data="">{{ user[2].lastName }}</td>
                 <td data="">[
-                    "john@smith.com"
+                    {{ user[2].email }}
                     ]</td>
-                <td data="">johnsmith</td>
+                <td data="">{{ user[2].username }}</td>
                 <td data="">false</td>
                 <td data=""><button class="button" data=""><i class="fas fa-edit"
                             data-v-6173b8aa=""></i></button><button class="button" data=""><i
@@ -80,7 +80,11 @@ import users from '@/data/users.json';
 
         </table>
     </div>
-</div></template>
+</div>
+
+</template>
 
 
-<style scoped></style>
+<style scoped>
+
+</style>
