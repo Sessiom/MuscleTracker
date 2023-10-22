@@ -19,8 +19,22 @@
             "domain": "slashdot.org",
             "ip": "117.29.86.254",
             "workout": {
+                "pace": 4,
+                "calories": 1250,
                 "distance": "0.52 mi",
                 "duration": "25:30",
+                "weekly": {
+                    "pace": 5,
+                    "calories": 2243,
+                    "distance": "2.30 mi",
+                    "duration": "44:10"
+                    },
+                "alltime": {
+                    "pace": 12,
+                    "calories": 8900,
+                    "distance": "12.30 mi",
+                    "duration": "2:30:26"
+                },
                 "coordinates": {
                     "lat": 38.1340923,
                     "lng": -76.5183512
@@ -50,8 +64,22 @@
             "domain": "51.la",
             "ip": "253.240.20.181",
             "workout": {
+                "pace": 18,
+                "calories": 920,
                 "distance": "1.24 mi",
                 "duration": "6:21",
+                "weekly": {
+                    "pace": 22,
+                    "calories": 1990,
+                    "distance": "3.10 mi",
+                    "duration": "15:42"
+                    },
+                "alltime": {
+                    "pace": 20,
+                    "calories": 5500,
+                    "distance": "7.22 mi",
+                    "duration": "34:31"
+                },
                 "coordinates": {
                     "lat": 38.1343013,
                     "lng": -85.6498512
@@ -81,8 +109,22 @@
             "domain": "earthlink.net",
             "ip": "205.226.160.3",
             "workout": {
+                "pace": 1,
+                "calories": 1445,
                 "distance": "0.23 mi",
                 "duration": "11:58",
+                "weekly": {
+                    "pace": 3,
+                    "calories": 2500,
+                    "distance": "1.05 mi",
+                    "duration": "30:20"
+                    },
+                "alltime": {
+                    "pace": 10,
+                    "calories": 6970,
+                    "distance": "5.30 mi",
+                    "duration": "55:19"
+                },
                 "coordinates": {
                     "lat": 39.1154672,
                     "lng": -121.4671882
