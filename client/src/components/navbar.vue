@@ -37,7 +37,7 @@ const isShoppingCartOpen = ref(false);
 
         <div class="navbar-dropdown">
           <a class="navbar-item">
-            Users
+            <RouterLink class="navbar-item" to="/Admin">Admin</RouterLink>
           </a>
 
         </div>

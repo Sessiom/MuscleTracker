@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue"
+import { isReactive, ref } from "vue"
 import AddWorkoutForm from "@/components/AddWorkoutForm.vue"
 import users from '@/data/users.json';
 
@@ -8,6 +8,8 @@ const show1 = ref(true);
 const show2 = ref(true);
 const show3 = ref(true);
 const isActive = ref(false);
+
+
 </script>
 
 <template>
@@ -19,7 +21,8 @@ const isActive = ref(false);
         <div class="column is-half is-offset-one-quarter">
           <button @click="isActive = !isActive" class="button is-info is-fullwidth">Add Workout</button>
           <form v-if="isActive">
-           <AddWorkoutForm/>
+           <AddWorkoutForm :isActive= "!isActive"/>
+           
           </form><br>
           
 
