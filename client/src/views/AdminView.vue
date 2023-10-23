@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts"> //edit
 import { isReactive, ref } from "vue"
 import users from '@/data/users.json';
 import { getSession, useLogin } from '@/model/session'
