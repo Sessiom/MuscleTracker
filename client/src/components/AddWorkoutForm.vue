@@ -49,7 +49,7 @@ const isActive = ref(true);
 </template>
 
 
-<stye scoped>
+<style scoped>
 
-</stye>
+</style>
 
