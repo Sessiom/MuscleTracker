@@ -2,7 +2,7 @@
 
 const path = require('path')
 const express = require('express');
-const productController = require('./controllers/products');
+//const productController = require('./controllers/products');
 const userController = require('./controllers/users');
 const app = express();
 
@@ -19,7 +19,7 @@ app
         next();
     })
 
-    .use('/api/v1/products', productController)
+//    .use('/api/v1/products', productController)
     .use('/api/v1/users', userController)
 
     .get('*', (req, res) => {
