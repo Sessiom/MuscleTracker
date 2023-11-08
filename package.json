@@ -1,5 +1,5 @@
 {
-  "name": "class-work",
+  "name": "final-project",
   "version": "1.0.0",
   "description": "",
   "author": "",
@@ -8,7 +8,7 @@
   "scripts": {
     "build": "npm i --production && cd client && npm i && npm run build && cd ..",
     "start": "node server/index.js",
-    "dev": "nodemon --watch ./server server/index.js"
+    "dev": "npm i -g nodemon && nodemon --watch ./server server/index.js"
   },
   "dependencies": {
     "express": "^4.17.20"
