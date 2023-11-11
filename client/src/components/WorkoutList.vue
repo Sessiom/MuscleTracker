@@ -1,14 +1,19 @@
 <script setup lang="ts">
-import { ref } from "vue"
-import { getUsers } from '@/model/users';
-import AddWorkoutForm from "@/components/AddWorkoutForm.vue";
+import {  ref } from "vue"
+import workoutData from "@/components/AddWorkoutForm.vue"
+import { getSession } from '@/model/session'
+import { defineProps } from 'vue'
+
+const session = getSession();
+
+const props = defineProps({
+    workout: {
+        type: Array,
+        required: true
+    }
+})
 
 const show1 = ref(true);
-const isActive = ref(false);
-
-
-const newuser = await getUsers();
-
 
 
 </script>
@@ -17,40 +22,36 @@ const newuser = await getUsers();
 
   
     <div>
-      <h1 class="title">Friends Activity</h1>
-      <div class="columns">
-        <div class="column is-half is-offset-one-quarter">
-          <button @click="isActive = true" class="button is-info is-fullwidth">Add Workout</button>
-          <AddWorkoutForm v-if="isActive" :isActive="isActive"/>
-        
-          <div v-if="show1" v-for="user in newuser" :key= "user.id">
+          <div v-if="show1">
             <article class="media box">
               <figure class="media-left">
-                <p class="image is-64x64"><img
-                    :src="user.image">
+                <p v-if="session.user" class="image is-64x64"><img
+                    :src="session.user.image">
                 </p>
               </figure>
               <div class="media-content">
               <div class="content">
-                <p><strong>{{ user.firstName }} {{ user.lastName }}</strong> &nbsp;<small>{{ user.username }}</small> &nbsp; <small>{{ user.time }}</small><br>
-                  {{ user.workout.type }} - {
-                  "lat": {{ user.workout.coordinates.lat }},
-                  "lng": {{ user.workout.coordinates.lng }}
+                <p v-if="session.user"><strong>{{ session.user.firstName }} {{ session.user.lastName }}</strong> &nbsp;
+                  <small>{{ session.user.username }}</small> &nbsp; 
+                  <small>{{ session.user.time }}</small><br>
+                  {{ workoutData.type }} - {
+                  "lat": {{ session.user.workout.coordinates.lat }},
+                  "lng": {{ session.user.workout.coordinates.lng }}
                   }
                 <div class="columns">
                   <div class="column has-text-centered"
                     style="display: flex; justify-content: space-around; align-items: center;">
                     <div>
-                      <div class="title" style="margin: 0px;"> {{ user.workout.distance }}</div>
+                      <div class="title" style="margin: 0px;"> {{ workoutData.distance }}</div>
                       <div class="heading">Distance</div>
                     </div>
                     <div>
-                      <div class="title" style="margin: 0px;">{{ user.workout.duration }}</div>
+                      <div class="title" style="margin: 0px;">{{ workoutData.duration }}</div>
                       <div class="heading">Duration</div>
                     </div>
                   </div>
                   <div class="column"><img
-                      :src="user.workout.picture"
+                      :src="workoutData.picture"
                       style="max-height: 100%;"></div>
                 </div>
                 </p>
@@ -66,8 +67,6 @@ const newuser = await getUsers();
           </article>
         </div>
        </div>
-      </div>
-    </div>
 
 
 </template>
@@ -75,4 +74,3 @@ const newuser = await getUsers();
 <style scoped>
 
 </style>
-
