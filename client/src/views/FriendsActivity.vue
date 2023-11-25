@@ -5,8 +5,9 @@ import users from '@/data/users.json';
 import { getUsers } from '@/model/users';
 
 const show1 = ref(true);
+const show2 = ref(true);
+const show3 = ref(true);
 const isActive = ref(false);
-
 
 const newuser = await getUsers();
 
