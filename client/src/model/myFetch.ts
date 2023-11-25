@@ -1,7 +1,7 @@
 /* B"H
 */
 
-const API_ROOT = 'https://final-project-csp493.onrender.com';
+const API_ROOT = 'http://localhost:3000';
 
 export function rest(url: string){
     return fetch(url)
