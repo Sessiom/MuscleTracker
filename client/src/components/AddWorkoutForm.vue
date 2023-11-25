@@ -11,7 +11,6 @@ const location = ref("");
 const picture = ref("");
 const type = ref("");
 
-const isActive = ref(true);
 
 const emit = defineEmits(['workoutAdded']);
 
@@ -65,61 +64,58 @@ const onSubmit = () => {
 
 
 <template>
-    <div v-if="isActive" class="modal is-active">
-        <div class="modal-background"></div>
+  
+        
         <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Add a Workout</p>
-                <button @click="isActive = false" class="delete" aria-label="close"></button>
-            </header>
+           
+
+            
             <form @submit.prevent="onSubmit" id="form">
             <section class="modal-card-body">
                 <div class="form-control">
-                    <label class="label" for="title">Title</label>
+                    <label class="label" for="title" id="title">Title</label>
                         <input type="text" class="input" id="title" v-model="title"></div>
 
                 <div class="field" data="">
-                    <label class="label" for="date" data="">Date</label>
+                    <label class="label" for="date" id="date">Date</label>
                         <input type="text" class="input" id="date" v-model="date"></div>
 
                 <div class="field" data="">
-                    <label class="label" for="duration" data="">Duration</label>
+                    <label class="label" for="duration" id="duration">Duration</label>
                         <input type="text" class="input" id="duration" v-model="duration"></div>
 
             <div class="field" data="">
-                <label class="label" for="location" data="">Location</label>
+                <label class="label" for="location" id="location">Location</label>
                         <input type="text" class="input" id="location" v-model="location"></div>
 
             <div class="field" data="">
-                <label class="label" for="location" data="">Picture</label>
-                        <input type="text" class="input" id="location" v-model="picture"></div>
+                <label class="label" for="picture" id="picture">Picture</label>
+                        <input type="text" class="input" id="picture" v-model="picture"></div>
 
             <div class="field" data="">
-                <label class="label" for="type" data="">Type</label>
-                <div class="select is-full-width" data="">
+                <label class="label" for="type" id="type">Type</label>
+                <div class="select is-full-width">
                         <select class="form-control" id="type" v-model="type">
-                        <option value="run" data="">Run</option>
-                        <option value="bike" data="">Bike</option>
-                        <option value="swim" data="">Walk</option>
-                        <option value="cardio" data="">Cardio</option>
-                        <option value="strength" data="">Strength</option>
+                        <option value="run">Run</option>
+                        <option value="bike">Bike</option>
+                        <option value="swim">Walk</option>
+                        <option value="cardio">Cardio</option>
+                        <option value="strength">Strength</option>
                     </select>
                 </div>
             </div>
         </section>
+        </form>
 
         <footer class="modal-card-foot">
                 <button class="button is-success" >Save changes</button>
-                <button @click="isActive = false" class="button">Cancel</button>
+            
         </footer>
-            </form>
                 
     </div>
-</div>
 </template>
 
 
 <style scoped>
 
 </style>
-

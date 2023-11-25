@@ -21,7 +21,7 @@ const newuser = await getUsers();
       <div class="columns">
         <div class="column is-half is-offset-one-quarter">
           <button @click="isActive = true" class="button is-info is-fullwidth">Add Workout</button>
-          <AddWorkoutForm v-if="isActive" :isActive="isActive"/>
+          <AddWorkoutForm v-if="isActive"/>
         
           <div v-if="show1" v-for="user in newuser" :key= "user.id">
             <article class="media box">
