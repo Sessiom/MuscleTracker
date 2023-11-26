@@ -6,11 +6,11 @@ const isActive = ref(true);
 
 
 <template>
-    <div v-if="isActive" class="modal is-active">
-        <div class="modal-background"></div>
+
+        
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Add a Workout</p><button @click="isActive = !isActive" class="delete" aria-label="close"></button>
+                <p class="modal-card-title">Add a Workout</p>
             </header>
             <section class="modal-card-body">
                 <div class="field" data=""><label class="label" for="name" data="">Title</label>
@@ -43,13 +43,16 @@ const isActive = ref(true);
 
         <footer class="modal-card-foot">
                 <button class="button is-success">Save changes</button>
-                <button @click="isActive = !isActive" class="button">Cancel</button></footer>
+            </footer>
     </div>
-</div>
 </template>
 
 
 <style scoped>
+
+.modal-card {
+    margin: 10px;
+}
 
 </style>
 
