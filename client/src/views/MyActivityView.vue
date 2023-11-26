@@ -13,9 +13,7 @@ const isActive = ref(false);
       <div class="columns">
         <div class="column is-half is-offset-one-quarter">
           <button @click="isActive = !isActive" class="button is-info is-fullwidth">Add Workout</button>
-          <form v-if="isActive">
-           <AddWorkoutForm/>
-          </form><br>  
+          <AddWorkoutForm v-if="isActive" @close="isActive = false"/>  
           <NewWorkoutPost/> 
         </div> 
       </div>

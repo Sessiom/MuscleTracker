@@ -2,35 +2,92 @@
 import { ref } from "vue"
 
 const isActive = ref(true);
+
+const emit = defineEmits(['workoutAdded']);
+
+const onSubmit = () => {
+    if (!title.value) {
+        toast.error("Please add a title");
+        return;
+    }
+    if (!date.value) {
+        toast.error("Please add a date");
+        return;
+    }
+    if (!duration.value) {
+        toast.error("Please add a duration");
+        return;
+    }
+    if (!location.value) {
+        toast.error("Please add a location");
+        return;
+    }
+    if (!picture.value) {
+        toast.error("Please add a picture");
+        return;
+    }
+    if (!type.value) {
+        toast.error("Please add a type");
+        return;
+    }
+
+    const workoutData = {
+        title: title.value,
+        date: date.value,
+        duration: duration.value,
+        location: location.value,
+        picture: picture.value,
+        type: type.value,
+    };
+
+    emit('workoutAdded', workoutData);
+
+    title.value = "";
+    date.value = "";
+    duration.value = "";
+    location.value = "";
+    picture.value = "";
+    type.value = "";
+};
+
+
 </script>
 
 
 <template>
-    <div v-if="isActive" class="modal is-active">
-        <div class="modal-background"></div>
+  
+        
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Add a Workout</p><button @click="isActive = !isActive" class="delete" aria-label="close"></button>
+                <p class="modal-card-title">Add a Workout</p>
+                <button @click="isActive = false" class="delete" aria-label="close"></button>
             </header>
+            <form @submit.prevent="onSubmit" id="form">
             <section class="modal-card-body">
-                <div class="field" data=""><label class="label" for="name" data="">Title</label>
-                        <input type="text" class="input" name="title" id="title" data=""></div>
+                <div class="form-control">
+                    <label class="label" for="title">Title</label>
+                        <input type="text" class="input" id="title" v-model="title"></div>
 
-                <div class="field" data=""><label class="label" for="date" data="">Date</label>
-                        <input type="date" class="input" id="date" data=""></div>
+                <div class="field" data="">
+                    <label class="label" for="date" data="">Date</label>
+                        <input type="text" class="input" id="date" v-model="date"></div>
 
-                <div class="field" data=""><label class="label" for="duration" data="">Duration</label>
-                        <input type="text" class="input" id="duration" data=""></div>
+                <div class="field" data="">
+                    <label class="label" for="duration" data="">Duration</label>
+                        <input type="text" class="input" id="duration" v-model="duration"></div>
 
-            <div class="field" data=""><label class="label" for="location" data="">Location</label>
-                        <input type="text" class="input" id="location" data=""></div>
+            <div class="field" data="">
+                <label class="label" for="location" data="">Location</label>
+                        <input type="text" class="input" id="location" v-model="location"></div>
 
-            <div class="field" data=""><label class="label" for="location" data="">Picture</label>
-                        <input type="text" class="input" id="location" data=""></div>
+            <div class="field" data="">
+                <label class="label" for="location" data="">Picture</label>
+                        <input type="text" class="input" id="location" v-model="picture"></div>
 
-            <div class="field" data=""><label class="label" for="type" data="">Type</label>
+            <div class="field" data="">
+                <label class="label" for="type" data="">Type</label>
                 <div class="select is-full-width" data="">
-                        <select class="form-control" id="type" data="">
+                        <select class="form-control" id="type" v-model="type">
                         <option value="run" data="">Run</option>
                         <option value="bike" data="">Bike</option>
                         <option value="swim" data="">Walk</option>
@@ -40,10 +97,14 @@ const isActive = ref(true);
                 </div>
             </div>
         </section>
+        </form>
 
         <footer class="modal-card-foot">
-                <button class="button is-success">Save changes</button>
-                <button @click="isActive = !isActive" class="button">Cancel</button></footer>
+                <button class="button is-success" >Save changes</button>
+                <button @click="isActive = false" class="button">Cancel</button>
+        </footer>
+            </form>
+                
     </div>
 </div>
 </template>
@@ -52,4 +113,3 @@ const isActive = ref(true);
 <style scoped>
 
 </style>
-
