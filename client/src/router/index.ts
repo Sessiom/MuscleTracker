@@ -22,7 +22,7 @@ const router = createRouter({
       path: "/Friends",
       name: "Friends",
       component: () => import("../views/FriendsActivity.vue"),
-      beforeEnter: requireLogin,
+     // beforeEnter: requireLogin,
     },
     {
       path: "/Admin",
