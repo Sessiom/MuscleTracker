@@ -29,8 +29,6 @@ const onSubmit = () => {
 
     emit('workoutAdded', workoutData);
 
-    toast.success("Workout added successfully");
-
     //clear from
     title.value = "";
     date.value = "";

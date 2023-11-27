@@ -2,12 +2,13 @@
 import { ref } from "vue"
 import { workouts } from '../model/workout';
 import { getSession } from '@/model/session'
+import { useToast } from "vue-toastification";
 import AddWorkoutForm from "@/components/AddWorkoutForm.vue"
 import WorkoutList from "@/components/WorkoutList.vue";
+
+const toast = useToast();
 const isActive = ref(false);
-
 const session = getSession();
-
 const currentUserName = session.user?.firstName;
 
 // Add a workout
@@ -26,7 +27,7 @@ const handleWorkoutAdded = (workoutData: any) => {
     picture: workoutData.picture,
   });
 
-  console.log(generateUniqueId());
+  toast.success("Workout added ");
 }
 
 // Generate a unique id
