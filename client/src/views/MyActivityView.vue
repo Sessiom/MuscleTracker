@@ -1,9 +1,39 @@
 <script setup lang="ts">
 import { ref } from "vue"
+import { workouts } from '../model/workout';
+import { getSession } from '@/model/session'
 import AddWorkoutForm from "@/components/AddWorkoutForm.vue"
-import NewWorkoutPost from "@/components/NewWorkoutPost.vue";
 import WorkoutList from "@/components/WorkoutList.vue";
 const isActive = ref(false);
+
+const session = getSession();
+
+const currentUserName = session.user?.firstName;
+
+// Add a workout
+const handleWorkoutAdded = (workoutData: any) => {
+  workouts.value.push({
+    id: generateUniqueId(),
+    firstName: session.user?.firstName ?? '',
+    lastName: session.user?.lastName ?? '',
+    userName: session.user?.username ?? '',
+    image: session.user?.image ?? '',
+    distance: workoutData.distance,
+    title: workoutData.title,
+    date: workoutData.date,
+    duration: workoutData.duration,
+    location: workoutData.location,
+    picture: workoutData.picture,
+  });
+
+  console.log(generateUniqueId());
+}
+
+// Generate a unique id
+const generateUniqueId = () => {
+  return Math.floor(Math.random() * 1000000)
+}
+
 </script>
 
 <template>
@@ -15,9 +45,9 @@ const isActive = ref(false);
         <div class="column is-half is-offset-one-quarter">
           <button @click="isActive = !isActive" class="button is-info is-fullwidth">Add Workout</button>
           <div v-if="isActive">
-           <AddWorkoutForm/>
+           <AddWorkoutForm :isActive= "!isActive" @workoutAdded="handleWorkoutAdded"/>
           </div><br> 
-          <NewWorkoutPost/> 
+          <WorkoutList :firstName="currentUserName"/> 
         </div> 
       </div>
     </div>

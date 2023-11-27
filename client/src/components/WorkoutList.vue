@@ -1,13 +1,29 @@
 <script setup lang="ts">
 
 import { workouts } from '../model/workout'
+import { defineProps } from "vue";
+import { computed } from "vue";
 
+const props = defineProps({
+    firstName: String,
+
+});
+
+
+
+const displayWorkouts = computed(() => {
+  if (props.firstName){
+  return workouts.value.filter(workout => workout.firstName === props.firstName);
+  } else {
+    return workouts.value;
+  }
+})
 </script>
 
 
 <template>
 
-    <div v-for="workout in workouts.slice().reverse()" :key="workout.id">
+    <div v-for="workout in displayWorkouts.slice().reverse() || workouts" :key="workout.id">
     <article class="media box">
       <figure class="media-left">
         <p class="image is-64x64"><img
