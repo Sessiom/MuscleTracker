@@ -1,7 +1,48 @@
 <script setup lang="ts">
 import { ref } from "vue"
+import { useToast } from "vue-toastification";
 
-const isActive = ref(true);
+const toast = useToast();
+const emit = defineEmits(["workoutAdded"]);
+
+const title = ref("");
+const date = ref("");
+const duration = ref("");
+const location = ref("");
+const picture = ref("");
+const type = ref("");
+
+const onSubmit = () => {
+    if(!title.value || !date.value || !duration.value || !location.value || !picture.value || !type.value) {
+        toast.error("Please fill out all fields");
+        return;
+    }
+
+     const workoutData ={
+        title: title.value,
+        date: date.value,
+        duration: duration.value,
+        location: location.value,
+        picture: picture.value,
+        type: type.value
+    }
+
+    emit('workoutAdded', workoutData);
+
+    toast.success("Workout added successfully");
+
+    //clear from
+    title.value = "";
+    date.value = "";
+    duration.value = "";
+    location.value = "";
+    picture.value = "";
+    type.value = "";
+
+}
+
+
+
 </script>
 
 
@@ -9,28 +50,32 @@ const isActive = ref(true);
 
         
         <div class="modal-card">
+
             <header class="modal-card-head">
                 <p class="modal-card-title">Add a Workout</p>
             </header>
+
+            <form id="form" @submit.prevent="onSubmit"> 
             <section class="modal-card-body">
-                <div class="field" data=""><label class="label" for="name" data="">Title</label>
-                        <input type="text" class="input" name="title" id="title" data=""></div>
 
-                <div class="field" data=""><label class="label" for="date" data="">Date</label>
-                        <input type="date" class="input" id="date" data=""></div>
+                <div class="field"><label class="label" for="Title" >Title</label>
+                        <input type="text" class="input" id="title" v-model="title" ></div>
 
-                <div class="field" data=""><label class="label" for="duration" data="">Duration</label>
-                        <input type="text" class="input" id="duration" data=""></div>
+                <div class="field"><label class="label" for="Date">Date</label>
+                        <input type="date" class="input" id="date" v-model="date"></div>
 
-            <div class="field" data=""><label class="label" for="location" data="">Location</label>
-                        <input type="text" class="input" id="location" data=""></div>
+                <div class="field"><label class="label" for="Duration">Duration</label>
+                        <input type="text" class="input" id="duration" v-model="duration"></div>
 
-            <div class="field" data=""><label class="label" for="location" data="">Picture</label>
-                        <input type="text" class="input" id="location" data=""></div>
+                <div class="field"><label class="label" for="Location">Location</label>
+                        <input type="text" class="input" id="location" v-model="location"></div>
 
-            <div class="field" data=""><label class="label" for="type" data="">Type</label>
+                <div class="field"><label class="label" for="Picture" >Picture</label>
+                        <input type="text" class="input" id="location" v-model="picture"></div>
+
+            <div class="field"><label class="label" for="Type" >Type</label>
                 <div class="select is-full-width" data="">
-                        <select class="form-control" id="type" data="">
+                        <select class="form-control" id="type" v-model="type">
                         <option value="run" data="">Run</option>
                         <option value="bike" data="">Bike</option>
                         <option value="swim" data="">Walk</option>
@@ -39,11 +84,16 @@ const isActive = ref(true);
                     </select>
                 </div>
             </div>
+
         </section>
+       
 
         <footer class="modal-card-foot">
                 <button class="button is-success">Save changes</button>
             </footer>
+
+        </form>
+
     </div>
 </template>
 

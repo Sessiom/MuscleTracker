@@ -2,6 +2,7 @@
 import { ref } from "vue"
 import AddWorkoutForm from "@/components/AddWorkoutForm.vue"
 import NewWorkoutPost from "@/components/NewWorkoutPost.vue";
+import WorkoutList from "@/components/WorkoutList.vue";
 const isActive = ref(false);
 </script>
 
@@ -13,9 +14,9 @@ const isActive = ref(false);
       <div class="columns">
         <div class="column is-half is-offset-one-quarter">
           <button @click="isActive = !isActive" class="button is-info is-fullwidth">Add Workout</button>
-          <form v-if="isActive">
+          <div v-if="isActive">
            <AddWorkoutForm/>
-          </form><br>  
+          </div><br> 
           <NewWorkoutPost/> 
         </div> 
       </div>

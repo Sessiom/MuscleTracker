@@ -7,22 +7,19 @@ import { workouts } from '../model/workout'
 
 <template>
 
-    <div v-for="workout in workouts" :key="workout.id">
+    <div v-for="workout in workouts.slice().reverse()" :key="workout.id">
     <article class="media box">
       <figure class="media-left">
         <p class="image is-64x64"><img
-             image>
+             :src= "workout.image">
         </p>
       </figure>
       <div class="media-content">
       <div class="content">
-        <p ><strong> {{ workout.id }} </strong> &nbsp;
+        <p ><strong> {{ workout.firstName }} {{ workout.lastName }} </strong> &nbsp;
             
-            <small> username </small> &nbsp; <small>{{ workout.time }}</small><br>
-          {{workout.title}} - {
-          "lat": coordinates lat,
-          "lng": coordinates lng
-          }
+            <small> {{ workout.userName }} </small> &nbsp; <small>{{ workout.date }}</small><br>
+          {{workout.title}} - {{ workout.location }}
         <div class="columns">
           <div class="column has-text-centered"
             style="display: flex; justify-content: space-around; align-items: center;">
