@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import { workouts } from '../model/workout';
+import { workouts, saveWorkoutsToLocalStorage } from '../model/workout';
 import { getSession } from '@/model/session'
 import { useToast } from "vue-toastification";
 import AddWorkoutForm from "@/components/AddWorkoutForm.vue"
@@ -27,6 +27,7 @@ const handleWorkoutAdded = (workoutData: any) => {
     picture: workoutData.picture,
   });
 
+  saveWorkoutsToLocalStorage();
   toast.success("Workout added ");
 }
 

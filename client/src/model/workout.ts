@@ -1,5 +1,18 @@
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { defineProps } from "vue";
+
+onMounted(() => {
+    const savedWorkouts = JSON.parse(localStorage.getItem("workouts") || "[]");
+
+    if (savedWorkouts) {
+        workouts.value = savedWorkouts;
+    }
+});
+
+//save to localstorage
+export const saveWorkoutsToLocalStorage = () => {
+    localStorage.setItem("workouts", JSON.stringify(workouts.value));
+}
 
 const props = defineProps({
     workouts: {

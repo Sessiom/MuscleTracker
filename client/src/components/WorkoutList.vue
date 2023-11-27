@@ -1,9 +1,11 @@
 <script setup lang="ts">
 
-import { workouts } from '../model/workout'
+import { workouts,saveWorkoutsToLocalStorage } from '../model/workout'
 import { defineProps } from "vue";
 import { computed } from "vue";
+import { useToast } from "vue-toastification";
 
+const toast = useToast();
 const props = defineProps({
     firstName: String,
 
@@ -18,6 +20,13 @@ const displayWorkouts = computed(() => {
     return workouts.value;
   }
 })
+
+const deleteWorkout = (id: number) => {
+  workouts.value = workouts.value.filter((workout) => workout.id !== id);
+  toast.success("Workout deleted");
+  saveWorkoutsToLocalStorage();
+}
+
 </script>
 
 
@@ -61,7 +70,7 @@ const displayWorkouts = computed(() => {
                 class="fas fa-heart"></i></span></a></div>
       </nav>
     </div>
-    <div class="media-right"><button class="delete"></button></div>
+    <div class="media-right"><button @click="deleteWorkout(workout.id)" class="delete"></button></div>
   </article>
 </div>
 
