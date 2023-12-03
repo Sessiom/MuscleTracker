@@ -9,9 +9,7 @@ import './assets/main.css'
 
 const app = createApp(App)
 
-app.use(router)
-
-app.use(Toast)
+app.use(router).use(Toast, {})
 
 app.mount('#app')
 
