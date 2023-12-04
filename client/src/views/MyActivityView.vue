@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import { workouts, saveWorkoutsToLocalStorage } from '../model/workout';
+import { workouts, saveWorkoutsToLocalStorage } from '../model/workouts';
 import { getSession } from '@/model/session'
 import { useToast } from "vue-toastification";
 import AddWorkoutForm from "@/components/AddWorkoutForm.vue"

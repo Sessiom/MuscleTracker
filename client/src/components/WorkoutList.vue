@@ -81,3 +81,4 @@ const deleteWorkout = (id: number) => {
 
 </style>
 
+../model/workouts
