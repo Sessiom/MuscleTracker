@@ -9,8 +9,8 @@ import { type User, getUserByEmail } from "./users";
 const toast = useToast();
 
 const session = reactive({
-  user: null as User | null, 
-  token: null as string | null, 
+  user: null as User | null,
+  token: null as string | null,
   redirectUrl: null as string | null,
   messages: [] as {
     type: string,
@@ -22,7 +22,7 @@ const session = reactive({
 export function api(action: string, body?: unknown, method?: string, headers?: any){
   session.loading++;
 
-  if(session.token) {
+  if(session.token){
     headers = headers ?? {};
     headers['Authorization'] = `Bearer ${session.token}`;
   }
@@ -44,16 +44,14 @@ export function showError(err: any){
 
 export function useLogin(){
   const router = useRouter();
+
   return {
     async login(email: string, password: string): Promise< User | null> {
       const response = await api("users/login", { email, password });
 
-      
-      session.user = response.user; 
-      session.token = response.token; 
-
       session.user = response.user;
       session.token = response.token;
+
       router.push(session.redirectUrl || "/");
       return session.user;
     },

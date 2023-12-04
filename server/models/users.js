@@ -56,6 +56,41 @@
  */
 
 /**
+ * @typedef {Object} weekly
+ * @property {number} pace
+ * @property {number} calories
+ * @property {string} distance
+ * @property {string} duration
+ */
+
+/**
+ * @typedef {Object} alltime
+ * @property {number} pace
+ * @property {number} calories
+ * @property {string} distance
+ * @property {string} duration
+ */
+
+/**
+ * @typedef {Object} coordinates
+ * @property {number} lat
+ * @property {number} lng
+ */
+
+/**
+ * @typedef {Object} workout
+ * @property {number} pace
+ * @property {number} calories
+ * @property {string} distance
+ * @property {string} duration
+ * @property {string} type
+ * @property {string} picture 
+ * @property {weekly} weekly
+ * @property {alltime} alltime
+ * @property {coordinates} coordinates
+ */
+
+/**
  * @typedef {Object} HasId
  * @property {number} id
  */
@@ -67,11 +102,12 @@
 /**
  * @type { {users: User[]} }
  */
-
 const data = require("../data/users.json");
+
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = process.env.JWT_SECRET
-const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN
+
+const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN;
 
 /**
  * @returns {User[]} An array of products.
@@ -148,9 +184,9 @@ function register(values) {
 /**
  * @param {string} email
  * @param {string} password
- * @returns {Promise<{user: User, token: string}>} The created user.
+ * @returns { Promise< { user: User, token: string}> } The created user.
  */
-async function login(email, password) {
+async function  login(email, password) {
 
   const item = data.users.find(x => x.email === email);
   if(!item) {
@@ -161,9 +197,9 @@ async function login(email, password) {
     throw new Error('Wrong password');
   }
 
-  const user = { ...item, password: undefined };
-  const token = await generateJWT(user)
-  return {user, token}
+  const user = { ...item, password: undefined, };
+  const token = await generateJWT(user);
+  return { user, token };
 }
 
 /**
@@ -193,29 +229,30 @@ function remove(id) {
   data.users.splice(index, 1);
 }
 
-function generateJWT(user){
-    return new Promise((resolve, reject) => {
-        jwt.sign(user, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN }, (err, token) => {
-            if(err) {
-                reject(err);
-            }else{
-                resolve(token)
-            }
-        });
-    })
+function generateJWT(user) {
+  return new Promise((resolve, reject) => {
+    jwt.sign(user, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN } , (err, token) => {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(token);
+      }
+    });
+  })
 }
 
-function verifyJWT(token){
-    return new Promise((resolve, reject) => {
-        jwt.verify(token, JWT_SECRET, (err, user) => {
-            if(err) {
-                reject(err); 
-            } else {
-                resolve(user);
-            }
-        })
-    })
+function verifyJWT(token) {
+  return new Promise((resolve, reject) => {
+    jwt.verify(token, JWT_SECRET, (err, user) => {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(user);
+      }
+    });
+  })
 }
+
 
 module.exports = {
   getAll, get, search, create, update, remove, login, register, generateJWT, verifyJWT
