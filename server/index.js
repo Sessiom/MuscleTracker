@@ -1,7 +1,7 @@
 const path = require('path')
 const express = require("express");
 require('dotenv').config() 
-const productController = require('./controllers/products');
+const workoutController = require('./controllers/workouts');
 const userController = require('./controllers/users');
 const app = express(); 
 
@@ -28,7 +28,7 @@ app
         next()
     })
 
-    .use('/api/v1/products', productController)
+    .use('/api/v1/workouts', workoutController)
     .use('/api/v1/users', userController)
 
     .get('*', (req, res) => {
