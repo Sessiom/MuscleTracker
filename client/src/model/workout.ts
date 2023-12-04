@@ -1,6 +1,8 @@
 import { ref, onMounted } from "vue";
 import { defineProps } from "vue";
-import data from "../data/workouts.json"
+import data from "../data/workouts.json";
+import { api } from "./session"
+
 onMounted(() => {
     const savedWorkouts = JSON.parse(localStorage.getItem("workouts") || "[]");
 
@@ -33,4 +35,8 @@ export interface workout {
     picture: string
   }
 
+export function getWorkouts(): Promise< workout[]> {
+    return api("workouts"); 
+  }
+  
 export const workouts = ref(data.workouts);
