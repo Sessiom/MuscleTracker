@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { workouts,saveWorkoutsToLocalStorage } from '../model/workout'
+import { workouts,saveWorkoutsToLocalStorage } from '../model/workouts'
 import { defineProps } from "vue";
 import { computed } from "vue";
 import { useToast } from "vue-toastification";
