@@ -37,7 +37,7 @@ const handleWorkoutAdded = (workoutData: any) => {
   console.log(newWorkout);
 
   //setWorkouts(workouts.value, session.user?.id);
-  addAWorkout(newWorkout).then((data) => {
+  addAWorkout(newWorkout as any).then((data) => {
     toast.success("Workout added ");
     console.log(data);
 //@ts-expect-error

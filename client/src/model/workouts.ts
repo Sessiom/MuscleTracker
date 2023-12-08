@@ -24,7 +24,7 @@ const props = defineProps({
 export const workouts = ref([] as workout[]);
 
 export interface workout {
-    _id?: string,
+    _id?: string | undefined,
     userId: string,
     firstName: string,
     lastName: string,

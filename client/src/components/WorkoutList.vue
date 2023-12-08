@@ -29,7 +29,6 @@ const displayWorkouts = computed(() => {
 })
 
 
-
 </script>
 
 
