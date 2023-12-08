@@ -39,7 +39,7 @@ const handleWorkoutAdded = (workoutData: any) => {
   addAWorkout(newWorkout).then((data) => {
     toast.success("Workout added ");
     console.log(data);
-
+// @ts-ignore
     workouts.value.push(data);
 
   });
