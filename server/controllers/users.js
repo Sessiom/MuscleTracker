@@ -7,9 +7,9 @@ const { getAll, get, search, create, update, remove, login, register,seed } = re
 const { requireUser } = require('../middleware/authorization');
 const router = express.Router();
 
-router.get('/', requireUser(true), (req, res, next) => {
-
-    res.send(getAll());
+router.get('/', requireUser(true), async (req, res, next) => {
+    console.log("YO");
+    res.send(await getAll());
 
 })
 .get('/search', requireUser() , (req, res, next) => {

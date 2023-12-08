@@ -62,16 +62,13 @@ async function search(query) {
   return workouts;
 }
 
-async function create(workout, userId) {
-  const newWorkout = {
-    workout: workout,
-    userId: ObjectId(userId),
-  };
+async function create(workout) {
+  workout['userId'] = new ObjectId(workout['userId']);
   const col = await getCollection();
-  const result = await col.insertOne(newWorkout);
-  newWorkout._id = result.insertedId;
+  const result = await col.insertOne(workout);
+  workout._id = result.insertedId;
 
-  return newWorkout;
+  return workout;
 }
 
 /**

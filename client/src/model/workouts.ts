@@ -26,6 +26,7 @@ export const workouts = ref([] as workout[]);
 
 export interface workout {
     _id?: string,
+    userId: string,
     firstName: string,
     lastName: string,
     userName: string,
@@ -36,16 +37,25 @@ export interface workout {
     duration: string,
     location: number,
     picture: string
-  }
+}
 
-export function getWorkouts(): Promise< workout[]> {
-    return api("workouts"); 
-  }
+export function getWorkouts(): Promise<workout[]> {
+    return api("workouts");
+}
 
-// set workouts with workouts and userid with api
-export function setWorkouts(workouts: workout[], userId: number): Promise< workout[]> {
-    return api("workouts", { method: "POST", body: {
-        workouts: workouts, 
-        userId: userId
-       }  }); 
-  }
+//addAWorkout
+export function addAWorkout(workout: workout): Promise<workout[]> {
+    return api("workouts", {
+        method: "POST", body: {
+            workout: workout
+        }
+    });
+}
+
+export function deleteAWorkout(workout: workout): Promise<workout[]> {
+    return api("workouts", {
+        method: "DELETE", body: {
+            workout: workout
+        }
+    });
+}

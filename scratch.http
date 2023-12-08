@@ -17,6 +17,19 @@ http://localhost:3000/api/v1/workouts
 ###
 POST http://localhost:3000/api/v1/workouts/seed
 
+###
+POST http://localhost:3000/api/v1/workouts
+
+Content-Type: application/json
+
+{
+  "workout": {
+    "name": "Chest Day",
+    "description": "Chest day is the best day",
+    "userId": 1
+  },
+  "userId": 1
+}
 
 /////////////////////////
 // Users

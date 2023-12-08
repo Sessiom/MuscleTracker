@@ -5,7 +5,7 @@
 
 import { api } from "./session";
 export interface User {
-  id?: number,
+  _id?: string,
   firstName: string,
   lastName: string,
   time: string,

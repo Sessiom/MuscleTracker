@@ -1,12 +1,12 @@
 <script setup lang="ts">
 
-import { getWorkouts, type workout, saveWorkoutsToLocalStorage } from '@/model/workouts'
+import { getWorkouts, type workout, saveWorkoutsToLocalStorage, workouts, deleteAWorkout } from '@/model/workouts'
 import { defineProps } from "vue";
 import { computed } from "vue";
 import { ref } from "vue";
 import { useToast } from "vue-toastification";
 
-const workouts = ref([] as workout[])
+//const workouts = ref([] as workout[])
 
 getWorkouts().then((data) => {
   workouts.value = data
@@ -39,7 +39,7 @@ const deleteWorkout = (id: number) => {
 
 <template>
 
-    <div v-for="workout in displayWorkouts.slice().reverse() || workouts" :key="workout.id">
+    <div v-for="workout in displayWorkouts" :key="workout._id">
     <article class="media box">
       <figure class="media-left">
         <p class="image is-64x64"><img

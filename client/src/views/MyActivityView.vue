@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import { workouts, saveWorkoutsToLocalStorage, setWorkouts, type workout  } from '../model/workouts';
+import { workouts, saveWorkoutsToLocalStorage, type workout, addAWorkout  } from '../model/workouts';
 import { getSession } from '@/model/session'
 import { useToast } from "vue-toastification";
 import AddWorkoutForm from "@/components/AddWorkoutForm.vue"
@@ -13,9 +13,15 @@ const currentUserName = session.user?.firstName;
 
 // Add a workout
 const handleWorkoutAdded = (workoutData: any) => {
+  const userId = session.user?._id;
+  if (!userId) {
+    toast.error("Please login");
+    return;
+  }
   const newWorkout = {
     firstName: session.user?.firstName ?? '',
     lastName: session.user?.lastName ?? '',
+    userId: userId,
     userName: session.user?.username ?? '',
     image: session.user?.image ?? '',
     distance: workoutData.distance,
@@ -25,20 +31,23 @@ const handleWorkoutAdded = (workoutData: any) => {
     location: workoutData.location,
     picture: workoutData.picture,
   } as workout;
-  
+
   // workout value and userid
-  console.log(workouts.value, session.user?.id);
-  setWorkouts(workouts.value, session.user?.id ?? 0);
+  console.log(newWorkout);
+  //setWorkouts(workouts.value, session.user?.id);
+  addAWorkout(newWorkout).then((data) => {
+    toast.success("Workout added ");
+    console.log(data);
+
+    workouts.value.push(data);
+
+  });
 
   //saveWorkoutsToLocalStorage();
 
-  toast.success("Workout added ");
+  
 }
 
-// Generate a unique id
-const generateUniqueId = () => {
-  return Math.floor(Math.random() * 1000000)
-}
 
 </script>
 

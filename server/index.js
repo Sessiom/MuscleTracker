@@ -26,8 +26,8 @@ app
     .use(parseAuthorizationToken)
 
     .use((req, res, next) => {
-        console.log(`Request: ${req.method} ${req.url}`)
-        console.log(`Authorization: ${req.headers.authorization}`)
+        //console.log(`Request: ${req.method} ${req.url}`)
+        //console.log(`Authorization: ${req.headers.authorization}`)
         next()
     })
 

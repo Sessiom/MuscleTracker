@@ -35,10 +35,11 @@ router.get('/', (req, res, next) => {
 
 })
 .post('/', (req, res, next) => {
-  console.log("YO", req.body);
-  const { workouts, userId } = req.body;
-  
-    create(workouts, userId)
+ 
+  const { workout } = req.body.body;
+  console.log(workout)
+
+    create(workout)
     .then((workout) => {
         res.send(workout);
     }).catch(next);

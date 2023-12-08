@@ -16,13 +16,15 @@ const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN;
 /**
  * @returns {User[]} An array of products.
  */
-function getAll() {
-  return data.users;
+async function getAll() {
+  const col = await getCollection();
+  return await col.find({}).toArray();
 }
 
 /**
  * @param {number} id - The product's ID.
  */
+
 function get(id) {
   const item = data.users.find(x => x.id === id);
   if(!item) {
@@ -90,20 +92,24 @@ function register(values) {
  * @param {string} password
  * @returns { Promise< { user: User, token: string}> } The created user.
  */
-async function  login(email, password) {
-
-  const item = data.users.find(x => x.email === email);
-  if(!item) {
-    throw new Error('User not found');
+async function login(email, password) {
+  const col = await getCollection();
+  const user = await col.findOne({ email: email });
+  if (!user) {
+    throw {
+      message: "User not found",
+      status: 404,
+    };
   }
-
-  if(item.password !== password) {
-    throw new Error('Wrong password');
+  if (user.password !== password) {
+    throw {
+      message: "Password is incorrect",
+      status: 400,
+    };
   }
-
-  const user = { ...item, password: undefined, };
-  const token = await generateJWT(user);
-  return { user, token };
+  const BeastlyUser = { ...user, password: undefined };
+  const token = await generateJWT(BeastlyUser);
+  return { user: BeastlyUser, token: token };
 }
 
 /**
