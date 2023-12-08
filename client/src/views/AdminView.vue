@@ -1,17 +1,14 @@
-<script setup lang="ts"> //edit
-import { isReactive, ref } from "vue"
+<script setup lang="ts"> 
 import users from '@/data/users.json';
-import { getSession, useLogin } from '@/model/session'
-import { getUsers } from '@/model/users';
 import UserList from "@/components/UserList.vue";
 
 </script>
 
 
 <template>
-    <div class="container" v-for="(user,index) in users" :key ="index">
+    <div class="container">
         <div data-v-6173b8aa="">
-            <nav class="breadcrumb" aria-label="breadcrumbs" data-v-6173b8aa="">
+            <nav class="breadcrumb" aria-label="breadcrumbs">
                 <ul data="">
                     <li data=""><a href="#" data="">My Exercise</a></li>
                     <li data=""><a href="#" data="">Admin</a></li>

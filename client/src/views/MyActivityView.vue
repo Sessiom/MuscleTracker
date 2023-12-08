@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import { workouts, saveWorkoutsToLocalStorage, type workout, addAWorkout  } from '../model/workouts';
+import { workouts, type workout, addAWorkout  } from '../model/workouts';
 import { getSession } from '@/model/session'
 import { useToast } from "vue-toastification";
 import AddWorkoutForm from "@/components/AddWorkoutForm.vue"
@@ -34,6 +34,7 @@ const handleWorkoutAdded = (workoutData: any) => {
 
   // workout value and userid
   console.log(newWorkout);
+  
   //setWorkouts(workouts.value, session.user?.id);
   addAWorkout(newWorkout).then((data) => {
     toast.success("Workout added ");

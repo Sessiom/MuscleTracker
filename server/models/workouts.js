@@ -1,5 +1,3 @@
-/* B"H
-*/
 
 const { ObjectId, connect } = require('./mongo');
 const data = require("../data/workouts.json");

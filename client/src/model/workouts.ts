@@ -1,6 +1,5 @@
 import { ref, onMounted } from "vue";
 import { defineProps } from "vue";
-import data from "../data/workouts.json";
 import { api } from "./session"
 
 onMounted(() => {

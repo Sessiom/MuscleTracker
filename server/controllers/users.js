@@ -1,6 +1,3 @@
-// @ts-check
-/* B"H
-*/
 
 const express = require('express');
 const { getAll, get, search, create, update, remove, login, register,seed } = require('../models/users');

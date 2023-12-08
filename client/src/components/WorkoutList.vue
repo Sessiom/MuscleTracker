@@ -3,7 +3,7 @@
 import { getWorkouts, type workout, saveWorkoutsToLocalStorage, workouts, deleteAWorkout } from '@/model/workouts'
 import { defineProps } from "vue";
 import { computed } from "vue";
-import { ref } from "vue";
+//import { ref } from "vue";
 import { useToast } from "vue-toastification";
 
 //const workouts = ref([] as workout[])
@@ -77,7 +77,7 @@ const deleteWorkout = (id: number) => {
                 class="fas fa-heart"></i></span></a></div>
       </nav>
     </div>
-    <div class="media-right"><button @click="deleteWorkout(workout.id)" class="delete"></button></div>
+    <div class="media-right"><button @click="deleteWorkout(workout._id)" class="delete"></button></div>
   </article>
 </div>
 

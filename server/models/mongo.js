@@ -1,5 +1,3 @@
-/* B"H
-*/
 
 const { MongoClient, ObjectId } = require('mongodb');
 const uri = process.env.MONGO_URI;

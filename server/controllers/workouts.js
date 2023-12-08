@@ -1,5 +1,3 @@
-/* B"H
-*/
 
 const express = require('express');
 const { getAll, get, search, create, update, remove, seed } = require('../models/workouts');

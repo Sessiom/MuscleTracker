@@ -1,10 +1,7 @@
 <script setup lang="ts">
 
 import { getUsers, type User } from '@/model/users'
-//import { defineProps } from "vue";
-//import { computed } from "vue";
 import { ref } from "vue";
-//import { useToast } from "vue-toastification";
 
 const users = ref([] as User[])
 
@@ -15,7 +12,7 @@ getUsers().then((data) => {
 </script>
 
 <template>
-    <tr data="" v-for="user in users" :key="user.id">
+    <tr data="" v-for="user in users" :key="user._id">
                 <td data=""><p class="image is-64x64" alt="avatar" data=""><img
                     :src="user.image">
                 </p></td>

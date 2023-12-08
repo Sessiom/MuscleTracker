@@ -5,12 +5,12 @@ import { useToast } from "vue-toastification";
 const toast = useToast();
 const emit = defineEmits(["workoutAdded"]);
 
-const title = ref("a");
-const date = ref("1/1/1");
-const duration = ref("1");
-const location = ref("1");
-const picture = ref("1");
-const type = ref("run");
+const title = ref("");
+const date = ref("");
+const duration = ref("");
+const location = ref("");
+const picture = ref("");
+const type = ref("");
 
 const onSubmit = () => {
     if(!title.value || !date.value || !duration.value || !location.value || !picture.value || !type.value) {

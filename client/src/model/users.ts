@@ -1,7 +1,3 @@
-/* B"H
-*/
-
-
 
 import { api } from "./session";
 export interface User {
