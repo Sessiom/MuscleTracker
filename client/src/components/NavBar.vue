@@ -10,8 +10,8 @@ const isActive = ref(false);
 <template>
   <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="28" height="28" />
+      <a class="navbar-item" href="https://outlift.com/wp-content/uploads/2023/07/Chest-Day-Muscles-Worked.jpg">
+        <img alt="Vue logo" class="logo" src="https://outlift.com/wp-content/uploads/2023/07/Chest-Day-Muscles-Worked.jpg" width="28" height="28" />
 
       </a>
 

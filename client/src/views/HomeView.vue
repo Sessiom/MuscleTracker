@@ -1,22 +1,30 @@
 <script setup lang="ts">
-import { ref } from "vue"
+import { ref, watch } from "vue"
 import { getSession } from '@/model/session'
 const show1 = ref(true);
 const session = getSession();
+
+watch(() => session.user, (newUser) => {
+  if (newUser) {
+    show1.value = false;
+  }
+}, { immediate: true });
 
 </script>
 
 <template >
   <main class="columns is-multiline is-centered">
-    <div class="column is-full">
-      <h1 class="title">Home</h1>
-
+    <div v-if="show1" class="column is-full" >
+      <h1 class="title" style="text-align: center">Hello,</h1>
+      <h2 class="subtitle" style="text-align: center">Welcome to the Muscle Tracker!</h2>
+      <h2 class="subtitle" style="text-align: center">Please login in the top right.</h2>
     </div>
 
     <div class="container">
       <div class="columns">
         <div class="column is-hidden-touch is-one-quarter">
           
+
         </div>
       <div v-if="session.user" class="column">
         <div class="box has-text-success summary">
