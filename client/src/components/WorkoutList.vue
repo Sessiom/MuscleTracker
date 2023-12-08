@@ -28,11 +28,7 @@ const displayWorkouts = computed(() => {
   }
 })
 
-const deleteWorkout = (id: number) => {
-  workouts.value = workouts.value.filter((workout) => workout.id !== id);
-  toast.success("Workout deleted");
-  saveWorkoutsToLocalStorage();
-}
+
 
 </script>
 
@@ -77,7 +73,7 @@ const deleteWorkout = (id: number) => {
                 class="fas fa-heart"></i></span></a></div>
       </nav>
     </div>
-    <div class="media-right"><button @click="deleteWorkout(workout._id)" class="delete"></button></div>
+    <div class="media-right"><button @click="" class="delete"></button></div>
   </article>
 </div>
 
