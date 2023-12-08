@@ -3,7 +3,7 @@
 */
 
 const express = require('express');
-const { getAll, get, search, create, update, remove, login, register } = require('../models/users');
+const { getAll, get, search, create, update, remove, login, register,seed } = require('../models/users');
 const { requireUser } = require('../middleware/authorization');
 const router = express.Router();
 
@@ -60,6 +60,14 @@ router.get('/', requireUser(true), (req, res, next) => {
     
     remove(+req.params.id);
     res.send({message: 'User removed'});
-});
+})
+.post('/seed', (req, res, next) => {
+
+    seed()
+    .then(() => {
+      res.send({message: 'users seeded'});
+    }).catch(next);
+  
+  })
 
 module.exports = router;

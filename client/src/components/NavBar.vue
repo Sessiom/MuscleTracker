@@ -4,7 +4,6 @@ import { RouterLink } from 'vue-router';
 import LoginBadge from './LoginBadge.vue';
 
 const isActive = ref(false);
-const isShoppingCartOpen = ref(false);
 
 </script>
 

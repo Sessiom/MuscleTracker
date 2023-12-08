@@ -12,17 +12,17 @@ http://localhost:3000
 // Workouts
 
 ###
-//http://localhost:3000/api/v1/workouts
+http://localhost:3000/api/v1/workouts
 
 ###
-//POST http://localhost:3000/api/v1/workouts/seed
+POST http://localhost:3000/api/v1/workouts/seed
 
 
 /////////////////////////
 // Users
 
 ###
-//http://localhost:3000/api/v1/products
+POST http://localhost:3000/api/v1/users/seed
 
 ###
 POST http://localhost:3000/api/v1/users

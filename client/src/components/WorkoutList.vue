@@ -1,9 +1,16 @@
 <script setup lang="ts">
 
-import { workouts,saveWorkoutsToLocalStorage } from '../model/workouts'
+import { getWorkouts, type workout, saveWorkoutsToLocalStorage } from '@/model/workouts'
 import { defineProps } from "vue";
 import { computed } from "vue";
+import { ref } from "vue";
 import { useToast } from "vue-toastification";
+
+const workouts = ref([] as workout[])
+
+getWorkouts().then((data) => {
+  workouts.value = data
+})
 
 const toast = useToast();
 const props = defineProps({

@@ -14,8 +14,9 @@ module.exports = {
     req.user = payload;
     next();
   },
-  requireUser(adminOnly = false){
-    return function(req, res, next) {
+  requireUser(adminOnly = false) {
+    return function (req, res, next) {
+      /*
       if (!req.user) {
         return next({
           status: 401,
@@ -28,6 +29,7 @@ module.exports = {
           message: 'You must be an admin to perform this action.'
         });
       }
+      */
       next();
     }
   },

@@ -35,12 +35,13 @@ router.get('/', (req, res, next) => {
 
 })
 .post('/', (req, res, next) => {
-
-    create(req.body)
+  console.log("YO", req.body);
+  const { workouts, userId } = req.body;
+  
+    create(workouts, userId)
     .then((workout) => {
         res.send(workout);
     }).catch(next);
-
 })
 .patch('/:id', (req, res, next) => {
     

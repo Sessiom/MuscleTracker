@@ -3,6 +3,7 @@ const express = require("express");
 require('dotenv').config() 
 const workoutController = require('./controllers/workouts');
 const userController = require('./controllers/users');
+const { parseAuthorizationToken, requireUser } = require('./middleware/authorization.js');
 const app = express(); 
 
 const mongo = require('./models/mongo')
@@ -21,6 +22,8 @@ app
         res.header('Access-Control-Allow-Headers', '*');
         next();
     })
+
+    .use(parseAuthorizationToken)
 
     .use((req, res, next) => {
         console.log(`Request: ${req.method} ${req.url}`)

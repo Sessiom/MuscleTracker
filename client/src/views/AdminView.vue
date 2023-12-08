@@ -3,6 +3,7 @@ import { isReactive, ref } from "vue"
 import users from '@/data/users.json';
 import { getSession, useLogin } from '@/model/session'
 import { getUsers } from '@/model/users';
+import UserList from "@/components/UserList.vue";
 
 </script>
 
@@ -33,53 +34,7 @@ import { getUsers } from '@/model/users';
                 <th data=""></th>
             </tr>
 
-            <tr data="">
-                <td data=""><p class="image is-64x64" alt="avatar" data=""><img
-                    :src="user[0].image">
-                </p></td>
-                <td data="">{{user[0].firstName}}</td>
-                <td data="">{{user[0].lastName}}</td>
-                <td data="">[
-                    {{user[0].email}}
-                    ]</td>
-                <td data="">{{user[0].username}}</td>
-                <td data="">{{user[0].role }}</td>
-                <td data=""><button class="button" data=""><i class="fas fa-edit"
-                            data=""></i></button><button class="button" data=""><i
-                            class="fas fa-trash" data=""></i></button></td>
-            </tr>
-
-            <tr data="">
-                <td data=""><p class="image is-64x64" alt="avatar" data=""><img
-                    :src="user[1].image">
-                </p></td>
-                <td data="">{{user[1].firstName}}</td>
-                <td data="">{{user[1].lastName}}</td>
-                <td data="">[
-                     {{user[1].email}}  
-                    ]</td>
-                <td data="">{{user[1].username}}</td>
-                <td data="">{{user[1].role }}</td>
-                <td data=""><button class="button" data=""><i class="fas fa-edit"
-                            data-v-6173b8aa=""></i></button><button class="button" data=""><i
-                            class="fas fa-trash" data=""></i></button></td>
-            </tr>
-
-            <tr data="">
-                <td data=""><p class="image is-64x64" alt="avatar" data=""><img
-                    :src="user[2].image">
-                </p></td>
-                <td data="">{{ user[2].firstName }}</td>
-                <td data="">{{ user[2].lastName }}</td>
-                <td data="">[
-                    {{ user[2].email }}
-                    ]</td>
-                <td data="">{{ user[2].username }}</td>
-                <td data="">{{user[2].role }}</td>
-                <td data=""><button class="button" data=""><i class="fas fa-edit"
-                            data-v-6173b8aa=""></i></button><button class="button" data=""><i
-                            class="fas fa-trash" data=""></i></button></td>
-            </tr>
+            <UserList :users="users"/>
 
         </table>
     </div>

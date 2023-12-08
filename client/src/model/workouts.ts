@@ -22,13 +22,16 @@ const props = defineProps({
         required: true
     }
 });
+export const workouts = ref([] as workout[]);
 
 export interface workout {
-    id: number,
+    _id?: string,
     firstName: string,
     lastName: string,
     userName: string,
     image: string,
+    title: string,
+    date: string,
     distance: string,
     duration: string,
     location: number,
@@ -38,5 +41,11 @@ export interface workout {
 export function getWorkouts(): Promise< workout[]> {
     return api("workouts"); 
   }
-  
-export const workouts = ref(data.workouts);
+
+// set workouts with workouts and userid with api
+export function setWorkouts(workouts: workout[], userId: number): Promise< workout[]> {
+    return api("workouts", { method: "POST", body: {
+        workouts: workouts, 
+        userId: userId
+       }  }); 
+  }

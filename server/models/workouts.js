@@ -62,15 +62,10 @@ async function search(query) {
   return workouts;
 }
 
-/**
- * @param {Workout} workout - The workout to create.
- * @returns {Promise<Workout>} The created workout.
- */
-
-async function create(workout) {
+async function create(workout, userId) {
   const newWorkout = {
-    id: data.workouts.length + 1,
-    ...workout,
+    workout: workout,
+    userId: ObjectId(userId),
   };
   const col = await getCollection();
   const result = await col.insertOne(newWorkout);
