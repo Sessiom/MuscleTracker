@@ -28,14 +28,18 @@ const displayWorkouts = computed(() => {
   }
 })
 
-async function deleteWorkout(workout: any) {
-  const success = await deleteAWorkout(workout);
-  if (success) {
-    workouts.value = workouts.value.filter((w: any) => w._id !== workout._id);
-    toast.success("Workout deleted");
-  } else {
+function deleteWorkout(workout: any) {
+  deleteAWorkout(workout).then(success => {
+    if (success) {
+      workouts.value = workouts.value.filter((w: any) => w._id !== workout._id);
+      toast.success("Workout deleted");
+    } else {
+      toast.error("Failed to delete workout");
+    }
+  }).catch(error => {
+    console.error(error);
     toast.error("Failed to delete workout");
-  }
+  });
 }
 
 

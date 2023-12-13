@@ -32,13 +32,10 @@ const handleWorkoutAdded = (workoutData: any) => {
     picture: workoutData.picture,
   } as workout;
 
-  // workout value and userid
-  console.log(newWorkout);
-  
+
   //setWorkouts(workouts.value, session.user?.id);
   addAWorkout(newWorkout).then((data) => {
     toast.success("Workout added ");
-    console.log(data);
 //@ts-expect-error
     workouts.value.push(data);
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { ref } from "vue"
   import { getSession, useLogin } from '@/model/session'
+  import { RouterLink } from 'vue-router';
 
   const session = getSession()
   const { login, logout } = useLogin()
@@ -38,7 +39,7 @@
 
     <div class="navbar-item has-dropdown is-hoverable">
     <a class="button is-light">
-      Log in
+      <RouterLink class="navbar-item" to="/login">Log in</RouterLink>
     </a>
     <div class="navbar-dropdown">
           <a class="navbar-item" @click.prevent="doLogin1">
