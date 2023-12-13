@@ -28,6 +28,16 @@ const displayWorkouts = computed(() => {
   }
 })
 
+async function deleteWorkout(workout: any) {
+  const success = await deleteAWorkout(workout);
+  if (success) {
+    workouts.value = workouts.value.filter((w: any) => w._id !== workout._id);
+    toast.success("Workout deleted");
+  } else {
+    toast.error("Failed to delete workout");
+  }
+}
+
 
 </script>
 
@@ -72,7 +82,7 @@ const displayWorkouts = computed(() => {
                 class="fas fa-heart"></i></span></a></div>
       </nav>
     </div>
-    <div class="media-right"><button @click="" class="delete"></button></div>
+    <div class="media-right"><button @click="deleteWorkout(workout)" class="delete"></button></div>
   </article>
 </div>
 
@@ -82,5 +92,3 @@ const displayWorkouts = computed(() => {
 <style scoped>
 
 </style>
-
-../model/workouts

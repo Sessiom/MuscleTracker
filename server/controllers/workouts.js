@@ -53,7 +53,7 @@ router.get('/', (req, res, next) => {
 })
 .delete('/:id', (req, res, next) => {
     
-      remove(+req.params.id)
+      remove(req.params.id)                // deleted "+" which was converting the id to a number when it should be a string
       .then(() => {
           res.send({message: 'workout removed'});
       }).catch(next);

@@ -39,7 +39,7 @@ async function getAll() {
 
 async function get(id) {
   const col = await getCollection();
-  return await col.findOne({ _id: ObjectId(id) });
+  return await col.findOne({ _id: new ObjectId(id) });
 }
 
 async function getByCategory(category) {
@@ -88,9 +88,10 @@ async function update(workout) {
 /**
  * @param {string} id - The workout's ID.
  */
+
 async function remove(id) {
   const col = await getCollection();
-  const result = await col.deleteOne({ _id: ObjectId(id) });
+  const result = await col.deleteOne({ _id: new ObjectId(id) });
   if(result.deletedCount === 0) {
     throw new Error('Workout not found');
   }

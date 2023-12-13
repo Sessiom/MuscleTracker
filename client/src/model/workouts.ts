@@ -51,10 +51,12 @@ export function addAWorkout(workout: workout): Promise<workout[]> {
     });
 }
 
-export function deleteAWorkout(workout: workout): Promise<workout[]> {
-    return api("workouts", {
-        method: "DELETE", body: {
-            workout: workout
-        }
-    });
+export async function deleteAWorkout(workout: any): Promise<boolean> {
+  try {
+    await api(`workouts/${workout._id}`, undefined, 'DELETE');
+    return true;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
 }
