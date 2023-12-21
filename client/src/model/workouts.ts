@@ -60,3 +60,7 @@ export async function deleteAWorkout(workout: any): Promise<boolean> {
     return false;
   }
 }
+
+export async function searchWorkouts(search: string): Promise<workout[]> {
+    return api(`workouts/search/${search}`);
+}

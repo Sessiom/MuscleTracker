@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref, watch } from "vue"
 import { getSession } from '@/model/session'
+import AutoComplete from "@/components/AutoComplete.vue";
+
+
 const show1 = ref(true);
 const session = getSession();
 
@@ -18,6 +21,11 @@ watch(() => session.user, (newUser) => {
       <h1 class="title" style="text-align: center">Hello,</h1>
       <h2 class="subtitle" style="text-align: center">Welcome to the Muscle Tracker!</h2>
       <h2 class="subtitle" style="text-align: center">Please login in the top right.</h2>
+      <h2 class="subtitle" style="text-align: center">Search for top workouts</h2>
+
+      <!-- Auto Complete -->
+      <AutoComplete />
+
     </div>
 
     <div class="container">

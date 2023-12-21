@@ -103,7 +103,12 @@ async function seed() {
   await col.insertMany(data.workouts);
 }
 
+async function search(query) {
+  const col = await getCollection();
+  const regex = new RegExp(query, 'i'); // 'i' makes it case insensitive
+  return await col.find({ name: regex }).toArray();
+}
 
 module.exports = {
-  getAll, get, getByCategory, search, create, update, remove, getCollection, COLLECTION_NAME, seed
+  getAll, get, getByCategory, search, create, update, remove, search, getCollection, COLLECTION_NAME, seed
 };
