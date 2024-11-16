@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from "vue"
 import { getSession } from '@/model/session'
-import AutoComplete from "@/components/AutoComplete.vue";
 
 
 const show1 = ref(true);
